@@ -18,12 +18,21 @@
     <ClInclude Include="linkedstack.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="stackutil.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="linkedstack.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="example_linkedstack.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="stackutil.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="example_stackutil.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>

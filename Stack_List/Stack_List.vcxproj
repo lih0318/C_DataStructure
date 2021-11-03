@@ -140,10 +140,15 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="linkedstack.h" />
+    <ClInclude Include="stackutil.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="example_linkedstack.c" />
+    <ClCompile Include="example_linkedstack.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="example_stackutil.c" />
     <ClCompile Include="linkedstack.c" />
+    <ClCompile Include="stackutil.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
