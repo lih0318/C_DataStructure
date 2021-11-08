@@ -21,6 +21,15 @@
     <ClInclude Include="stackutil.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="exprdef.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="exprlinkedstack.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="stackcalc.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="linkedstack.c">
@@ -33,6 +42,12 @@
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="example_stackutil.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="exprlinkedstack.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="stackcalc.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
