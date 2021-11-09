@@ -149,8 +149,11 @@
     <ClCompile Include="example_linkedstack.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="example_stackutil.c" />
+    <ClCompile Include="example_stackutil.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="exprlinkedstack.c" />
+    <ClCompile Include="InfixToPostfix_ex.c" />
     <ClCompile Include="linkedstack.c" />
     <ClCompile Include="stackcalc.c" />
     <ClCompile Include="stackutil.c" />

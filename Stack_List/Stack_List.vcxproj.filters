@@ -50,5 +50,8 @@
     <ClCompile Include="stackcalc.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="InfixToPostfix_ex.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

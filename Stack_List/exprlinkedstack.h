@@ -1,6 +1,5 @@
 #ifndef _LINKED_STACK_
 #define _LINKED_STACK_
-#include "exprlinkedstack.h"
 
 typedef struct StackNodeType
 {

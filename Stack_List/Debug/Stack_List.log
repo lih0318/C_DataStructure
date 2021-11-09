@@ -1,5 +1,12 @@
-﻿  example_stackutil.c
-  linkedstack.c
-  stackutil.c
+﻿  InfixToPostfix_ex.c
+  exprlinkedstack.c
+  stackcalc.c
   코드를 생성하고 있습니다...
-  Stack_List.vcxproj -> C:\Users\dlsgu\OneDrive\바탕 화면\C_자료구조\Stack_List\Debug\Stack_List.exe
+linkedstack.obj : error LNK2005: _createLinkedStack이(가) exprlinkedstack.obj에 이미 정의되어 있습니다.
+linkedstack.obj : error LNK2005: _deleteLinkedStack이(가) exprlinkedstack.obj에 이미 정의되어 있습니다.
+linkedstack.obj : error LNK2005: _isLinkedStackEmpty이(가) exprlinkedstack.obj에 이미 정의되어 있습니다.
+linkedstack.obj : error LNK2005: _isLinkedStackFull이(가) exprlinkedstack.obj에 이미 정의되어 있습니다.
+linkedstack.obj : error LNK2005: _peekLS이(가) exprlinkedstack.obj에 이미 정의되어 있습니다.
+linkedstack.obj : error LNK2005: _popLS이(가) exprlinkedstack.obj에 이미 정의되어 있습니다.
+linkedstack.obj : error LNK2005: _pushLS이(가) exprlinkedstack.obj에 이미 정의되어 있습니다.
+C:\Users\dlsgu\OneDrive\바탕 화면\C_자료구조\Stack_List\Debug\Stack_List.exe : fatal error LNK1169: 여러 번 정의된 기호가 있습니다.

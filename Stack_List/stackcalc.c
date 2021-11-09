@@ -74,3 +74,123 @@ void calcExpr(ExprToken* pExprTokens, int tokenCount)
 		deleteLinkedStack(pStack);
 	}
 }
+
+void convertInfixToPostfix(ExprToken* pExprTokens, int tokenCount)
+{
+	LinkedStack* pStack = NULL;
+	StackNode* pNode = NULL;
+	Precedence tokenType;
+	Precedence inStackTokenType;
+	int i = 0;
+
+	if (pExprTokens == NULL) return;
+
+	pStack = createLinkedStack();
+	if (pStack != NULL) {
+		for (i = 0; i < tokenCount; i++) {
+			tokenType = pExprTokens[i].type;
+			switch (tokenType) {
+			case operand:
+				printf("%f\n", pExprTokens[i].value);
+				break;
+			case rparen:
+				pNode = popLS(pStack);
+				while (pNode != NULL && pNode->data.type != lparen) {
+					printToken(pNode->data);
+					free(pNode);
+
+					pNode = popLS(pStack);
+				}
+				if (pNode != NULL) free(pNode);
+				break;
+			default:
+				while (isLinkedStackEmpty(pStack) == FALSE) {
+					inStackTokenType = peekLS(pStack)->data.type;
+					if (outStackPrecedence(tokenType) <= inStackPrecedence(inStackTokenType)) {
+						pNode = popLS(pStack);
+						if (pNode != NULL) {
+							printToken(pNode->data);
+							free(pNode);
+						}
+					}
+					else {
+						break;
+					}
+				}
+
+				pushLSExprToken(pStack, pExprTokens[i]);
+				break;
+			} // end of switch
+		} // end of for
+
+		while (isLinkedStackEmpty(pStack) == FALSE) {
+			pNode = popLS(pStack);
+			if (pNode != NULL) {
+				printToken(pNode->data);
+				free(pNode);
+			}
+		}
+		deleteLinkedStack(pStack);
+	}
+}
+
+int inStackPrecedence(Precedence oper)
+{
+	switch (oper) {
+	case lparen:
+		return 0;
+	case rparen:
+		return 4;
+	case times:
+	case divide:
+		return 2;
+	case plus:
+	case minus:
+		return 1;
+	}
+	return -1;
+}
+
+int outStackPrecedence(Precedence oper)
+{
+	switch (oper) {
+	case lparen:
+		return 5;
+	case rparen:
+		return 4;
+	case times:
+	case divide:
+		return 2;
+	case plus:
+	case minus:
+		return 1;
+	}
+	return -1;
+}
+
+void printToken(ExprToken element)
+{
+	switch (element.type) {
+	case lparen:
+		printf("(\n");
+		break;
+	case rparen:
+		printf(")\n");
+		break;
+	case plus:
+		printf("+\n");
+		break;
+	case minus:
+		printf("-\n");
+		break;
+	case times:
+		printf("*\n");
+		break;
+	case divide:
+		printf("/\n");
+		break;
+	case operand:
+		printf("%f\n", element.value);
+		break;
+	}
+}
